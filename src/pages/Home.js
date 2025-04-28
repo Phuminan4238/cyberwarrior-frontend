@@ -158,30 +158,23 @@ const Home = () => {
       {/* New Section End */}
 
       <section className="">
-        <div className=" mx-auto max-w-screen-sm px-4">
+        <div className="mx-auto max-w-screen-sm px-4">
           <h2 className="font-thai mb-4 text-2xl font-extrabold tracking-tight leading-tight text-center text-white md:text-2xl">
             โดย
           </h2>
 
-          <div class="bg-white rounded-3xl grid grid-cols-2 gap-8 text-gray-500  md:grid-cols-3  dark:text-gray-400">
-            <a
-              href="#"
-              className="inline-flex items-center  px-8 py-3 gap-4 flex-shrink-0 justify-center hover:text-gray-900 dark:hover:text-white"
-            >
+          <div className="bg-white rounded-3xl grid grid-cols-2 gap-8 text-gray-500 md:grid-cols-3 dark:text-gray-400">
+            <button className="inline-flex items-center px-8 py-3 gap-4 flex-shrink-0 justify-center hover:text-gray-900 dark:hover:text-white">
               <img src={policeLogo} alt="Police Logo" />
-            </a>
-            <a
-              href="#"
-              className="inline-flex items-center px-8 py-3 gap-4 flex-shrink-0 justify-center hover:text-gray-900 dark:hover:text-white"
-            >
+            </button>
+
+            <button className="inline-flex items-center px-8 py-3 gap-4 flex-shrink-0 justify-center hover:text-gray-900 dark:hover:text-white">
               <img src={kmuttLogo} alt="KMUTT Logo" />
-            </a>
-            <a
-              href="#"
-              className="inline-flex items-center px-8 py-3 gap-4 flex-shrink-0 justify-center hover:text-gray-900 dark:hover:text-white"
-            >
+            </button>
+
+            <button className="inline-flex items-center px-8 py-3 gap-4 flex-shrink-0 justify-center hover:text-gray-900 dark:hover:text-white">
               <img src={cpeLogo} alt="CPE Logo" />
-            </a>
+            </button>
           </div>
         </div>
       </section>
