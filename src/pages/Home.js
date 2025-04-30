@@ -478,7 +478,7 @@ const Home = () => {
         <div className="grid max-w-screen-xl px-12 md:px-4 py-4  mx-auto lg:gap-8 xl:gap-0 md:pt-[4rem] md:pb-[2rem] lg:grid-cols-12">
           {/* ด้านบน (ข้อมูลการแข่งขัน / เกี่ยวกับการแข่งขัน) */}
           <div className="lg:col-span-12">
-            <h4 className="max-w-2xl text-xl font-thai text-start font-bold uppercase tracking-tight leading-none md:text-2xl">
+            <h4 className="max-w-2xl text-xl font-thai text-start font-bold uppercase tracking-tight  md:text-2xl">
               คุณสมบัติผู้เข้าแข่งขัน
             </h4>
           </div>
@@ -594,10 +594,10 @@ const Home = () => {
 
       <section className="text-white pt-8 md:pt-12 px-12 md:px-4">
         <div
-          className="relative bg-cover bg-initial bg-no-repeat bg-bottom rounded-xl border-l-2 border-r-2 border-white rounded-[26px] grid grid-cols-1 md:grid-cols-12 gap-6 max-w-screen-xl px-12 md:px-6 py-8 mx-auto md:gap-8"
+          className="relative bg-cover bg-initial bg-no-repeat bg-bottom rounded-xl border-l-2 border-r-2 border-white rounded-[26px] grid grid-cols-1 md:grid-cols-12 gap-6 max-w-screen-xl px-4 md:px-6 py-8 mx-auto md:gap-8"
           style={{ backgroundImage: `url(${backgroundImg})` }}
         >
-          <div className="absolute inset-0 bg-[rgba(10,29,58,0.1)]  z-0" />
+          <div className="absolute inset-0 bg-[rgba(10,29,58,0.1)] " />
           {/* Left Column */}
           <div className="lg:col-span-3 flex items-center justify-center">
             <h4 className="max-w-2xl text-xl font-thai text-center font-bold uppercase tracking-tight leading-none md:text-2xl">
@@ -611,7 +611,7 @@ const Home = () => {
               <input
                 type="email"
                 placeholder="กรอก E-mail ของคุณ"
-                className="w-full md:w-full px-4 py-2 rounded-lg bg-transparent border border-gray-300 font-thai text-white placeholder:text-gray-300"
+                className="w-full md:w-full px-4 py-2 rounded-lg bg-transparent border border-gray-300 font-thai text-white placeholder:text-gray-300 z-10"
               />
             </div>
           </div>
@@ -632,15 +632,15 @@ const Home = () => {
 
       <section className="text-white pt-8 md:pt-12 px-12 md:px-4">
         <div className="grid max-w-screen-xl   py-2  mx-auto lg:gap-4 ">
-          <div className="relative rounded-xl border-l-2 border-r-2 border-white rounded-[26px] gap-6 max-w-fit px-12  md:px-6 py-4 ml-0 md:gap-8">
+          <div className="relative rounded-xl border-l-2 border-r-2 border-white rounded-[26px] gap-2 max-w-fit px-4  md:px-4 py-4 ml-0 md:gap-8">
             {/* Left Column */}
             <div className="flex flex-col items-start justify-start gap-4">
-              <h4 className="max-w-2xl text-md font-thai text-start font-bold uppercase tracking-tight leading-none md:text-xl">
+              <h4 className=" text-md font-thai text-start font-bold uppercase tracking-tight leading-none md:text-xl">
                 ติดต่อสอบถาม
               </h4>
-              <h4 className="max-w-2xl text-md md:font-bold tracking-tight leading-none md:text-xl">
-                E-mail :
-                <span className="text-blue-400 pl-2">
+              <h4 className="text-md md:font-bold tracking-tight leading-none md:text-xl">
+                E-mail:
+                <span className="text-blue-400 pl-2 pt-2">
                   cyberwarrior2025@kmutt.ac.th
                 </span>
               </h4>

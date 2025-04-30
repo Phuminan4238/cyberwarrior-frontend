@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../index.css";
 import backgroundImg from "../assets/background.png";
+import cyberLogo from "../assets/cyber-logo.png";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,11 +18,13 @@ const NavBar = () => {
       <div className="absolute inset-0 bg-[rgba(10,29,58,0.5)] backdrop-blur-sm z-0" />
 
       {/* Main navbar content */}
-      <div className="relative z-10 max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto px-4 md:px-0 py-6">
+      <div className="relative z-10 max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto px-4 md:px-0 py-2">
         <Link to="/">
-          <span className="self-center text-3xl uppercase whitespace-nowrap text-white font-sans">
-            Cyber Warrior 2025
-          </span>
+          <img
+            src={cyberLogo}
+            alt="Cyber Warrior 2025 Logo"
+            className="h-20 w-auto"
+          />
         </Link>
 
         <button
@@ -73,7 +76,7 @@ const NavBar = () => {
             <li>
               <Link
                 // to="/registration"
-                className="block py-1 px-3 border-2 border-white rounded-2xl text-lg text-white hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-600"
+                className="block py-1 px-4 border-2 border-white rounded-2xl text-lg text-white hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-600"
               >
                 สมัครเข้าร่วม
               </Link>
