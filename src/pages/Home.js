@@ -631,7 +631,7 @@ const Home = () => {
       </section>
 
       <section className="text-white pt-8 md:pt-12 px-10 md:px-4">
-        <div className="grid max-w-screen-xl   py-2  mx-auto lg:gap-4 justify-center">
+        <div className="grid max-w-screen-xl   py-2  mx-auto lg:gap-4 justify-center md:justify-start">
           <div className="relative rounded-xl border-l-2 border-r-2 border-white rounded-[26px] gap-2 max-w-fit px-4 md:px-4 py-4 ml-0 md:gap-8">
             {/* Left Column */}
             <div className="flex flex-col items-start justify-start gap-4">
