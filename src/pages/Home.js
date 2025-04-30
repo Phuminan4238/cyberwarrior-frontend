@@ -51,7 +51,7 @@ const Home = () => {
       style={{ backgroundImage: `url(${backgroundImg})` }}
     >
       <section className="text-white">
-        <div className="grid w-full  md:max-w-screen-xl px-12 md:px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-[6rem] lg:grid-cols-12">
+        <div className="grid w-full justify-center md:max-w-screen-xl px-8 md:px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-[6rem] lg:grid-cols-12">
           <div className="md:mr-auto place-self-center lg:col-span-6">
             <div className="grid gap-8">
               <div>
@@ -152,7 +152,7 @@ const Home = () => {
                   )}
                 </div>
 
-                <div className="mt-6 md:mt-10 mb-3 text-center text-white uppercase font-thai pt-4 px-12 md:px-14 py-4 border-l-2 border-r-2 border-white rounded-[26px]">
+                <div className="mt-6 md:mt-10 mb-3 text-center text-white uppercase font-thai pt-4 px-10 md:px-14 py-4 border-l-2 border-r-2 border-white rounded-[26px]">
                   <span className="text-lg md:text-[1.4rem] font-normal">
                     <p>สมัครเข้าแข่งขันพร้อมกัน</p>
                   </span>
@@ -168,7 +168,7 @@ const Home = () => {
 
       {/* Logo  */}
       <section>
-        <div className="mx-auto max-w-screen-sm px-12 md:px-4">
+        <div className="mx-auto max-w-screen-sm px-10 md:px-4">
           <h2 className="font-thai mb-4 text-2xl font-extrabold tracking-tight leading-tight text-center text-white md:text-2xl">
             โดย
           </h2>
@@ -232,7 +232,7 @@ const Home = () => {
       </section>
 
       {/* <section className="pt-10">
-        <div className="mx-auto max-w-screen-sm px-12 md:px-4">
+        <div className="mx-auto max-w-screen-sm px-10 md:px-4">
           <h2 className="font-thai  mb-4 text-2xl font-bold tracking-tight leading-tight text-center text-white md:text-3xl">
             ผู้สนับสนุน
           </h2>
@@ -251,7 +251,7 @@ const Home = () => {
 
       {/* New Section Start */}
       <section className="text-white pt-4  md:pt-0">
-        <div className="grid max-w-screen-xl px-12 md:px-4 py-8 mx-auto md:gap-8 xl:gap-0 md:pt-[6rem] md:grid-cols-12">
+        <div className="grid max-w-screen-xl px-10 md:px-4 py-8 mx-auto md:gap-8 xl:gap-0 md:pt-[6rem] md:grid-cols-12">
           {/* ด้านบน (ข้อมูลการแข่งขัน / เกี่ยวกับการแข่งขัน) */}
           <div className="lg:col-span-12">
             <h4 className="max-w-2xl text-[1.6rem] mb-4 font-thai text-start font-bold uppercase tracking-tight leading-none md:text-3xl xl:text-3xl">
@@ -273,7 +273,7 @@ const Home = () => {
 
       {/* New Section Start */}
       <section className="text-white">
-        <div className="grid max-w-screen-xl px-12 md:px-4 py-4 md:py-8 mx-auto md:gap-8 xl:gap-0  md:grid-cols-12">
+        <div className="grid max-w-screen-xl px-10 md:px-4 py-4 md:py-8 mx-auto md:gap-8 xl:gap-0  md:grid-cols-12">
           {/* ด้านบน (ข้อมูลการแข่งขัน / เกี่ยวกับการแข่งขัน) */}
           <div className="lg:col-span-12">
             <h4 className="max-w-2xl text-xl font-thai text-start font-bold uppercase tracking-tight leading-none md:text-2xl">
@@ -422,7 +422,7 @@ const Home = () => {
       {/* Hide Timeline on mobile */}
       <div className="hidden md:block">
         <section className="text-white">
-          <div className="grid max-w-screen-xl px-12 md:px-4 py-8 mx-auto lg:gap-8 xl:gap-0 ">
+          <div className="grid max-w-screen-xl px-10 md:px-4 py-8 mx-auto lg:gap-8 xl:gap-0 ">
             <div className="lg:col-span-12">
               <h4 className="max-w-2xl text-2xl font-thai text-start font-bold uppercase tracking-tight leading-none md:text-2xl ">
                 ไทม์ไลน์การแข่งขัน
@@ -475,7 +475,7 @@ const Home = () => {
       </div>
 
       <section className="text-white">
-        <div className="grid max-w-screen-xl px-12 md:px-4 py-4  mx-auto lg:gap-8 xl:gap-0 md:pt-[4rem] md:pb-[2rem] lg:grid-cols-12">
+        <div className="grid max-w-screen-xl px-10 md:px-4 py-4  mx-auto lg:gap-8 xl:gap-0 md:pt-[4rem] md:pb-[2rem] lg:grid-cols-12">
           {/* ด้านบน (ข้อมูลการแข่งขัน / เกี่ยวกับการแข่งขัน) */}
           <div className="lg:col-span-12">
             <h4 className="max-w-2xl text-xl font-thai text-start font-bold uppercase tracking-tight  md:text-2xl">
@@ -514,7 +514,7 @@ const Home = () => {
       </section>
 
       <section className="text-white">
-        <div className="grid max-w-screen-xl px-12 md:px-4 py-4  mx-auto lg:gap-4  lg:grid-cols-12">
+        <div className="grid max-w-screen-xl px-10 md:px-4 py-4  mx-auto lg:gap-4  lg:grid-cols-12">
           {/* ด้านบน (ข้อมูลการแข่งขัน / เกี่ยวกับการแข่งขัน) */}
           <div className="lg:col-span-12">
             <h4 className="max-w-2xl text-xl font-thai text-start font-bold uppercase tracking-tight leading-none md:text-2xl">
@@ -592,9 +592,9 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="text-white pt-8 md:pt-12 px-12 md:px-4">
+      <section className="text-white pt-8 md:pt-12 px-10 md:px-4">
         <div
-          className="relative bg-cover bg-initial bg-no-repeat bg-bottom rounded-xl border-l-2 border-r-2 border-white rounded-[26px] grid grid-cols-1 md:grid-cols-12 gap-6 max-w-screen-xl px-4 md:px-6 py-8 mx-auto md:gap-8"
+          className="relative bg-cover bg-initial bg-no-repeat bg-bottom rounded-xl border-l-2 border-r-2 border-white rounded-[26px] grid grid-cols-1 md:grid-cols-12 gap-6 max-w-screen-xl px-6 md:px-6 py-8 mx-auto md:gap-8"
           style={{ backgroundImage: `url(${backgroundImg})` }}
         >
           <div className="absolute inset-0 bg-[rgba(10,29,58,0.1)] " />
@@ -630,9 +630,9 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="text-white pt-8 md:pt-12 px-12 md:px-4">
-        <div className="grid max-w-screen-xl   py-2  mx-auto lg:gap-4 ">
-          <div className="relative rounded-xl border-l-2 border-r-2 border-white rounded-[26px] gap-2 max-w-fit px-4  md:px-4 py-4 ml-0 md:gap-8">
+      <section className="text-white pt-8 md:pt-12 px-10 md:px-4">
+        <div className="grid max-w-screen-xl   py-2  mx-auto lg:gap-4 justify-center">
+          <div className="relative rounded-xl border-l-2 border-r-2 border-white rounded-[26px] gap-2 max-w-fit px-4 md:px-4 py-4 ml-0 md:gap-8">
             {/* Left Column */}
             <div className="flex flex-col items-start justify-start gap-4">
               <h4 className=" text-md font-thai text-start font-bold uppercase tracking-tight leading-none md:text-xl">
