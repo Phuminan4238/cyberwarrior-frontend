@@ -14,6 +14,9 @@ module.exports = {
         sans: ["Gabarito", "sans-serif"],
         thai: ["IBM Plex Sans Thai", "sans-serif"],
       },
+      width: {
+        fill: "-webkit-fill-available",
+      },
     },
   },
   plugins: [],

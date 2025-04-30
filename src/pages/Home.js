@@ -7,6 +7,9 @@ import kmuttLogo2 from "../assets/kmutt-logo-02.png";
 import policeLogo from "../assets/police-logo.png";
 import policeLogo2 from "../assets/police-logo-02.png";
 import sponsorlogo from "../assets/sponsor-logo.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar as faStarRegular } from "@fortawesome/free-regular-svg-icons";
+import { faTrophy } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
   // Countdown Logic
@@ -39,41 +42,41 @@ const Home = () => {
     return () => clearInterval(timer);
   }, []);
 
+  // Mobile check
+  const isMobile = window.innerWidth <= 768;
+
   return (
     <div
       className="w-full min-h-screen bg-cover bg-initial bg-no-repeat bg-fixed"
       style={{ backgroundImage: `url(${backgroundImg})` }}
     >
-      {/* New Section Start */}
       <section className="text-white">
-        <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-[6rem] lg:grid-cols-12">
-          <div className="mr-auto place-self-center lg:col-span-6">
+        <div className="grid w-full  md:max-w-screen-xl px-12 md:px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-[6rem] lg:grid-cols-12">
+          <div className="md:mr-auto place-self-center lg:col-span-6">
             <div className="grid gap-8">
-              {/* Left Column */}
               <div>
-                <h1 className="max-w-2xl mb-4 text-4xl font-normal uppercase tracking-tight leading-none md:text-5xl xl:text-8xl dark:text-white">
+                <h1 className="max-w-2xl mb-4 text-6xl font-normal uppercase tracking-tight leading-none md:text-5xl xl:text-8xl dark:text-white">
                   Cyber
                 </h1>
-                <h1 className="max-w-2xl mb-4 text-4xl font-normal uppercase tracking-tight leading-none md:text-5xl xl:text-8xl dark:text-white">
+                <h1 className="max-w-2xl mb-4 text-5xl font-normal uppercase tracking-tight leading-none md:text-5xl xl:text-8xl dark:text-white">
                   Warrior
                 </h1>
-                <h1 className="max-w-2xl mb-4 text-4xl font-normal uppercase tracking-tight leading-none  md:text-5xl xl:text-7xl dark:text-white">
+                <h1 className="max-w-2xl mb-4 text-5xl font-normal uppercase tracking-tight leading-none  md:text-5xl xl:text-7xl dark:text-white">
                   Hackathon
                 </h1>
-                <h1 className="max-w-2xl mb-0 text-4xl text-right font-normal uppercase tracking-tight leading-none md:text-5xl xl:text-8xl dark:text-white">
+                <h1 className="max-w-2xl mb-0 text-6xl text-right font-normal uppercase tracking-tight leading-none md:text-5xl xl:text-8xl dark:text-white">
                   2025
                 </h1>
               </div>
             </div>
           </div>
 
-          <div className="lg:mt-0 lg:col-span-6 lg:flex">
+          <div className="lg:mt-0 lg:col-span-6 lg:flex pt-6 md:pt-0">
             <div className="lg:mt-0 lg:col-span-6 lg:flex">
-              {/* Right Column */}
               <div className="flex flex-col items-center justify-end ">
-                {/* Countdown Section */}
                 <div className="flex items-center space-x-4 text-center ">
-                  {/* Days */}
+                  {/* Days - Only for larger screens */}
+
                   <div className="flex flex-col items-center">
                     <div className="flex space-x-1 gap-3">
                       {String(timeLeft.days || "00")
@@ -82,7 +85,7 @@ const Home = () => {
                         .map((digit, index) => (
                           <div
                             key={`day-${index}`}
-                            className="text-7xl font-normal text-white border border-white rounded-lg p-[0.6rem] py-0 w-16" // Fixed width
+                            className="text-7xl font-normal text-white border border-white rounded-lg p-[0.6rem] py-0 w-16"
                           >
                             {digit}
                           </div>
@@ -93,7 +96,6 @@ const Home = () => {
                     </div>
                   </div>
 
-                  {/* Colon */}
                   <div className="text-8xl font-normal text-white flex flex-col items-center pb-10">
                     <div>:</div>
                     <div className="h-6" />
@@ -108,7 +110,7 @@ const Home = () => {
                         .map((digit, index) => (
                           <div
                             key={`hour-${index}`}
-                            className="text-7xl font-normal text-white border border-white rounded-lg p-[0.6rem] py-0 w-16" // Fixed width
+                            className="text-7xl font-normal text-white border border-white rounded-lg p-[0.6rem] py-0 w-16"
                           >
                             {digit}
                           </div>
@@ -120,59 +122,38 @@ const Home = () => {
                   </div>
 
                   {/* Colon */}
-                  <div className="text-8xl font-normal text-white flex flex-col items-center pb-10">
-                    <div>:</div>
-                    <div className="h-6" />
-                  </div>
+                  {!isMobile && (
+                    <div className="text-8xl font-normal text-white flex flex-col items-center pb-10">
+                      <div>:</div>
+                      <div className="h-6" />
+                    </div>
+                  )}
 
                   {/* Minutes */}
-                  <div className="flex flex-col items-center">
-                    <div className="flex space-x-1 gap-3">
-                      {String(timeLeft.minutes || "00")
-                        .padStart(2, "0")
-                        .split("")
-                        .map((digit, index) => (
-                          <div
-                            key={`minute-${index}`}
-                            className="text-7xl font-normal text-white border border-white rounded-lg p-[0.6rem] py-0 w-16" // Fixed width
-                          >
-                            {digit}
-                          </div>
-                        ))}
+                  {!isMobile && (
+                    <div className="flex flex-col items-center">
+                      <div className="flex space-x-1 gap-3">
+                        {String(timeLeft.minutes || "00")
+                          .padStart(2, "0")
+                          .split("")
+                          .map((digit, index) => (
+                            <div
+                              key={`minute-${index}`}
+                              className="text-7xl font-normal text-white border border-white rounded-lg p-[0.6rem] py-0 w-16"
+                            >
+                              {digit}
+                            </div>
+                          ))}
+                      </div>
+                      <div className="mt-2 text-2xl font-medium uppercase text-white pt-3">
+                        Minute
+                      </div>
                     </div>
-                    <div className="mt-2 text-2xl font-medium uppercase text-white pt-3">
-                      Minute
-                    </div>
-                  </div>
-
-                  {/* <div className="text-8xl font-normal text-white flex flex-col items-center pb-10">
-                    <div>:</div>
-                    <div className="h-6" />
-                  </div>
-
-                  <div className="flex flex-col items-center">
-                    <div className="flex space-x-1 gap-3">
-                      {String(timeLeft.seconds || "00")
-                        .padStart(2, "0")
-                        .split("")
-                        .map((digit, index) => (
-                          <div
-                            key={`second-${index}`}
-                            className="text-7xl font-normal text-white border border-white rounded-lg p-[0.6rem] py-0 w-16" // Fixed width
-                          >
-                            {digit}
-                          </div>
-                        ))}
-                    </div>
-                    <div className="mt-2 text-2xl font-medium uppercase text-white pt-3">
-                      Second
-                    </div>
-                  </div> */}
+                  )}
                 </div>
 
-                {/* Submission Text */}
-                <div className="mt-10 mb-3 text-center text-white uppercase font-thai pt-4 px-14 py-4 border-l-2 border-r-2 border-white rounded-[26px]">
-                  <span className="text-[1.4rem] font-normal">
+                <div className="mt-6 md:mt-10 mb-3 text-center text-white uppercase font-thai pt-4 px-12 md:px-14 py-4 border-l-2 border-r-2 border-white rounded-[26px]">
+                  <span className="text-lg md:text-[1.4rem] font-normal">
                     <p>สมัครเข้าแข่งขันพร้อมกัน</p>
                   </span>
                   <p className="text-[1.6rem] font-bold pt-2">
@@ -184,47 +165,48 @@ const Home = () => {
           </div>
         </div>
       </section>
-      {/* New Section End */}
-      <section className="">
-        <div className="mx-auto max-w-screen-sm px-4">
-          <h2 className="font-thai mb-4 text-2xl font-extrabold tracking-tight leading-tight text-center text-white md:text-3xl">
+
+      {/* Logo  */}
+      <section>
+        <div className="mx-auto max-w-screen-sm px-12 md:px-4">
+          <h2 className="font-thai mb-4 text-2xl font-extrabold tracking-tight leading-tight text-center text-white md:text-2xl">
             โดย
           </h2>
 
-          <div className="bg-white rounded-3xl grid grid-cols-2 gap-8 text-gray-500 md:grid-cols-5 dark:text-gray-400 p-6">
-            <button className="inline-flex items-center justify-center w-full h-34 hover:text-gray-900 dark:hover:text-white">
+          <div className="bg-white rounded-3xl grid grid-cols-3  md:grid-cols-5 gap-8 md:gap-4 text-gray-500 dark:text-gray-400 p-6">
+            <button className="inline-flex items-center justify-center w-full hover:text-gray-900 dark:hover:text-white">
               <img
                 src={policeLogo2}
                 alt="Police Logo2"
-                className="h-24 object-contain"
+                className="h-16 object-contain"
               />
             </button>
-            <button className="inline-flex items-center justify-center w-full h-24 hover:text-gray-900 dark:hover:text-white">
+            <button className="inline-flex items-center justify-center w-full hover:text-gray-900 dark:hover:text-white">
               <img
                 src={policeLogo}
                 alt="Police Logo"
-                className="h-24 object-contain"
+                className="h-16 object-contain"
               />
             </button>
-            <button className="inline-flex items-center justify-center w-full h-24 hover:text-gray-900 dark:hover:text-white">
+            <button className="inline-flex items-center justify-center w-full hover:text-gray-900 dark:hover:text-white">
               <img
                 src={kmuttLogo}
                 alt="KMUTT Logo"
-                className="h-24 object-contain"
+                className="h-16 object-contain"
               />
             </button>
-            <button className="inline-flex items-center justify-center w-full h-24 hover:text-gray-900 dark:hover:text-white">
+            <button className="inline-flex items-center justify-center w-full hover:text-gray-900 dark:hover:text-white">
               <img
                 src={cpeLogo}
                 alt="CPE Logo"
-                className="h-24 object-contain"
+                className="h-16 object-contain"
               />
             </button>
-            <button className="inline-flex items-center justify-center w-full h-24 hover:text-gray-900 dark:hover:text-white">
+            <button className="inline-flex items-center justify-center w-full hover:text-gray-900 dark:hover:text-white">
               <img
                 src={kmuttLogo2}
                 alt="KMUTT Logo2"
-                className="h-24 object-contain"
+                className="h-16 object-contain"
               />
             </button>
           </div>
@@ -232,7 +214,25 @@ const Home = () => {
       </section>
 
       <section className="pt-10">
-        <div className="mx-auto max-w-screen-sm px-4">
+        <div className="mx-auto px-4 text-center">
+          <h2 className="font-thai mb-4 text-2xl font-bold tracking-tight leading-tight text-white md:text-2xl">
+            ผู้สนับสนุน
+          </h2>
+
+          <div className="inline-block bg-white rounded-3xl px-8 p-4 text-gray-500 dark:text-gray-400">
+            <button className="inline-flex items-center justify-center hover:text-gray-900 dark:hover:text-white">
+              <img
+                src={sponsorlogo}
+                alt="Sponsor Logo"
+                className="h-20 object-contain"
+              />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* <section className="pt-10">
+        <div className="mx-auto max-w-screen-sm px-12 md:px-4">
           <h2 className="font-thai  mb-4 text-2xl font-bold tracking-tight leading-tight text-center text-white md:text-3xl">
             ผู้สนับสนุน
           </h2>
@@ -247,98 +247,239 @@ const Home = () => {
             </button>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* New Section Start */}
-      <section className="text-white">
-        <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-[6rem] lg:grid-cols-12">
+      <section className="text-white pt-4  md:pt-0">
+        <div className="grid max-w-screen-xl px-12 md:px-4 py-8 mx-auto md:gap-8 xl:gap-0 md:pt-[6rem] md:grid-cols-12">
           {/* ด้านบน (ข้อมูลการแข่งขัน / เกี่ยวกับการแข่งขัน) */}
           <div className="lg:col-span-12">
-            <h4 className="max-w-2xl text-2xl mb-4 font-thai text-start font-bold uppercase tracking-tight leading-none md:text-3xl xl:text-3xl">
+            <h4 className="max-w-2xl text-[1.6rem] mb-4 font-thai text-start font-bold uppercase tracking-tight leading-none md:text-3xl xl:text-3xl">
               ข้อมูลการแข่งขัน
             </h4>
-            <h4 className="max-w-2xl text-2xl font-thai text-start font-bold uppercase tracking-tight leading-none md:text-2xl xl:text-xl">
-              เกี่ยวกับการแข่งขัน
+            <h4 className="max-w-2xl text-xl font-thai text-start font-bold uppercase tracking-tight leading-none md:text-2xl xl:text-xl">
+              เป้าหมายของการแข่งขัน
             </h4>
+            <p className="font-thai text-md md:text-lg pt-4">
+              มุ่งค้นหาองค์ความรู้และนวัตกรรมที่สามารถนำมาสนับสนุนภารกิจในการป้องกันและปราบปรามอาชญากรรมทางเทคโนโลยี
+              <br></br>
+              พร้อมทั้งสร้างเครือข่ายนักศึกษาที่มีศักยภาพด้านเทคโนโลยี
+              เพื่อร่วมเป็นกำลังสำคัญ ในการเสริมสร้างความมั่นคงปลอดภัย
+              ทางไซเบอร์
+            </p>
           </div>
         </div>
       </section>
 
       {/* New Section Start */}
       <section className="text-white">
-        <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-[6rem] lg:grid-cols-12">
+        <div className="grid max-w-screen-xl px-12 md:px-4 py-4 md:py-8 mx-auto md:gap-8 xl:gap-0  md:grid-cols-12">
           {/* ด้านบน (ข้อมูลการแข่งขัน / เกี่ยวกับการแข่งขัน) */}
           <div className="lg:col-span-12">
-            <h4 className="max-w-2xl text-2xl font-thai text-start font-bold uppercase tracking-tight leading-none md:text-2xl xl:text-xl">
+            <h4 className="max-w-2xl text-xl font-thai text-start font-bold uppercase tracking-tight leading-none md:text-2xl xl:text-xl">
               กำหนดการ
             </h4>
           </div>
 
           {/* ด้านล่าง (รับสมัคร + วันที่) */}
-          <div className="grid grid-cols-8 gap-4 lg:col-span-12 mt-8 mb-4">
-            <div className="col-span-4 flex items-center gap-2 font-thai">
-              <i className="fas fa-star text-yellow-400"></i>
-              <span className="text-lg font-normal">รับสมัคร</span>
+          <div className="grid grid-cols-1 md:grid-cols-8 gap-4 pt-4 lg:col-span-12 pt-0 md:mt-4 mb-4 md:mb-0">
+            <div className="md:col-span-4 flex flex-col md:flex-row items-start md:items-center gap-2 font-thai">
+              <span className="text-md md:text-lg font-normal">
+                {" "}
+                <FontAwesomeIcon
+                  icon={faStarRegular}
+                  className="text-white p-1 pr-3"
+                />
+                รับสมัคร
+              </span>
             </div>
 
             <div className="col-span-4 flex items-center justify-start font-thai">
-              <span className="text-lg font-normal">12-31 พฤษภาคม 2025</span>
+              <span className="text-md md:text-lg font-normal">
+                12-31 พฤษภาคม 2025
+              </span>
             </div>
           </div>
 
           {/* Repeat the same layout for the next section */}
-          <div className="grid grid-cols-8 gap-4 lg:col-span-12 mb-4">
-            <div className="col-span-4 flex items-center gap-2 font-thai">
-              <i className="fas fa-star text-yellow-400"></i>
-              <span className="text-lg font-normal">
+          <div className="grid grid-cols-1 md:grid-cols-8 gap-4 lg:col-span-12 pt-0 md:mt-4 mb-4 md:mb-0">
+            <div className="md:col-span-4 flex flex-col md:flex-row items-start md:items-center gap-2 font-thai">
+              <span className="text-md md:text-lg font-normal">
+                <FontAwesomeIcon
+                  icon={faStarRegular}
+                  className="text-white p-1 pr-3"
+                />
                 ประกาศรายชื่อผู้มีสิทธิ์เข้าแข่งขัน
               </span>
             </div>
 
             <div className="col-span-4 flex items-center justify-start font-thai">
-              <span className="text-lg font-normal">1 มิถุนายน 2025</span>
+              <span className="text-md md:text-lg font-normal">
+                1 มิถุนายน 2025
+              </span>
+            </div>
+          </div>
+
+          {/* Repeat the same layout for the next section */}
+          <div className="grid grid-cols-1 md:grid-cols-8 gap-4 lg:col-span-12 pt-0 md:mt-4 mb-4 md:mb-0">
+            <div className="md:col-span-4 flex flex-col md:flex-row items-start md:items-center gap-2 font-thai">
+              <span className="text-md md:text-lg font-normal">
+                {" "}
+                <FontAwesomeIcon
+                  icon={faStarRegular}
+                  className="text-white p-1 pr-3"
+                />
+                ปฐมนิเทศ และ workshop 1
+              </span>
+            </div>
+
+            <div className="col-span-4 flex items-center justify-start font-thai">
+              <span className="text-md md:text-lg font-normal">
+                2 - 6 มิถุนายน 2025
+              </span>
+            </div>
+          </div>
+
+          {/* Repeat the same layout for the next section */}
+          <div className="grid grid-cols-1 md:grid-cols-8 gap-4 lg:col-span-12 pt-0 md:mt-4 mb-4 md:mb-0">
+            <div className="md:col-span-4 flex flex-col md:flex-row items-start md:items-center gap-2 font-thai">
+              <span className="text-md md:text-lg font-normal">
+                <FontAwesomeIcon
+                  icon={faStarRegular}
+                  className="text-white p-1 pr-3"
+                />
+                ปฐมนิเทศ และ workshop 1
+              </span>
+            </div>
+
+            <div className="col-span-4 flex items-center justify-start font-thai">
+              <span className="text-md md:text-lg font-normal">
+                23 - 27 มิถุนายน 2025
+              </span>
+            </div>
+          </div>
+
+          {/* Repeat the same layout for the next section */}
+          <div className="grid grid-cols-1 md:grid-cols-8 gap-4 lg:col-span-12 pt-0 md:mt-4 mb-4 md:mb-0">
+            <div className="md:col-span-4 flex flex-col md:flex-row items-start md:items-center gap-2 font-thai">
+              <i className="fas fa-star text-yellow-400"></i>
+              <span className="text-md md:text-lg font-normal">
+                <FontAwesomeIcon
+                  icon={faStarRegular}
+                  className="text-white p-1 pr-3"
+                />
+                ส่งข้อเสนอโครงการ
+              </span>
+            </div>
+
+            <div className="col-span-4 flex items-center justify-start font-thai">
+              <span className="text-md md:text-lg font-normal">
+                4 กรกฎาคม 2025
+              </span>
+            </div>
+          </div>
+
+          {/* Repeat the same layout for the next section */}
+          <div className="grid grid-cols-1 md:grid-cols-8 gap-4 lg:col-span-12 pt-0 md:mt-4 mb-4 md:mb-0">
+            <div className="md:col-span-4 flex flex-col md:flex-row items-start md:items-center gap-2 font-thai">
+              <span className="text-md md:text-lg font-normal">
+                <FontAwesomeIcon
+                  icon={faStarRegular}
+                  className="text-white p-1 pr-3"
+                />
+                ประกาศผลผู้ผ่านเข้ารอบสุดท้าย
+              </span>
+            </div>
+
+            <div className="col-span-4 flex items-center justify-start font-thai">
+              <span className="text-md md:text-lg font-normal">
+                8 กรกฎาคม 2025
+              </span>
+            </div>
+          </div>
+
+          {/* Repeat the same layout for the next section */}
+          <div className="grid grid-cols-1 md:grid-cols-8 gap-4 lg:col-span-12 pt-0 md:mt-4 mb-4 md:mb-0">
+            <div className="md:col-span-4 flex flex-col md:flex-row items-start md:items-center gap-2 font-thai">
+              <span className="text-md md:text-lg font-normal">
+                <FontAwesomeIcon
+                  icon={faStarRegular}
+                  className="text-white p-1 pr-3"
+                />
+                Hackathon & Pitching Day
+              </span>
+            </div>
+
+            <div className="col-span-4 flex items-center justify-start font-thai">
+              <span className="text-md md:text-lg font-normal">
+                19 - 21 กรกฎาคม 2025
+              </span>
             </div>
           </div>
         </div>
       </section>
       {/* New Section End */}
 
-      {/* New Section Start */}
-      <section className="text-white">
-        <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 ">
-          {/* ด้านบน (ข้อมูลการแข่งขัน / เกี่ยวกับการแข่งขัน) */}
-          <div className="lg:col-span-12">
-            <h4 className="max-w-2xl text-2xl font-thai text-start font-bold uppercase tracking-tight leading-none md:text-2xl xl:text-xl">
-              ไทม์ไลน์การแข่งขัน
-            </h4>
-          </div>
-        </div>
-      </section>
-
-      {/* New Section Start */}
-      <section className="text-white">
-        <div className="grid grid-cols-7 gap-4 max-w-screen-xl px-4 mx-auto lg:gap-4 xl:gap-4 ">
-          {/* Each Column */}
-          {[...Array(7)].map((_, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center justify-center font-thai gap-2 p-2 h-[122px] rounded-2xl border border-white bg-gradient-to-b from-[#2F65AF66] to-[#0032D266]"
-            >
-              <i className="fas fa-star text-yellow-400"></i>
-              <span className="text-lg font-normal  text-center">รับสมัคร</span>
-              <span className="text-sm font-normal text-start">
-                12-31 พฤษภาคม
-              </span>
+      {/* Hide Timeline on mobile */}
+      <div className="hidden md:block">
+        <section className="text-white">
+          <div className="grid max-w-screen-xl px-12 md:px-4 py-8 mx-auto lg:gap-8 xl:gap-0 ">
+            <div className="lg:col-span-12">
+              <h4 className="max-w-2xl text-2xl font-thai text-start font-bold uppercase tracking-tight leading-none md:text-2xl xl:text-xl">
+                ไทม์ไลน์การแข่งขัน
+              </h4>
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        </section>
+
+        <section className="text-white">
+          <div className="grid grid-cols-7 gap-4 max-w-screen-xl px-4 mx-auto lg:gap-4 xl:gap-4">
+            {[
+              { title: "รับสมัคร", date: "12-31 พฤษภาคม 2025" },
+              {
+                title: "ประกาศรายชื่อผู้มีสิทธิ์เข้าแข่งขัน",
+                date: "1 มิถุนายน 2025",
+              },
+              { title: "ปฐมนิเทศ และ workshop 1", date: "2 - 6 มิถุนายน 2025" },
+              {
+                title: "ปฐมนิเทศ และ workshop 2",
+                date: "23 - 27 มิถุนายน 2025",
+              },
+              { title: "ส่งข้อเสนอโครงการ", date: "4 กรกฎาคม 2025" },
+              {
+                title: "ประกาศผลผู้ผ่านเข้ารอบสุดท้าย",
+                date: "8 กรกฎาคม 2025",
+              },
+              {
+                title: "Hackathon & Pitching Day",
+                date: "19 - 21 กรกฎาคม 2025",
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center justify-center font-thai gap-2 p-2 h-[140px] rounded-2xl border border-white bg-gradient-to-b from-[#2F65AF66] to-[#0032D266]"
+              >
+                <FontAwesomeIcon
+                  icon={faStarRegular}
+                  className="text-white p-1"
+                />
+                <span className="text-lg font-normal text-center">
+                  {item.title}
+                </span>
+                <span className="text-sm font-normal text-center">
+                  {item.date}
+                </span>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
 
       <section className="text-white">
-        <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-[6rem] lg:grid-cols-12">
+        <div className="grid max-w-screen-xl px-12 md:px-4 py-4  mx-auto lg:gap-8 xl:gap-0 md:pt-[4rem] md:pb-[2rem] lg:grid-cols-12">
           {/* ด้านบน (ข้อมูลการแข่งขัน / เกี่ยวกับการแข่งขัน) */}
           <div className="lg:col-span-12">
-            <h4 className="max-w-2xl text-2xl font-thai text-start font-bold uppercase tracking-tight leading-none md:text-2xl xl:text-xl">
+            <h4 className="max-w-2xl text-xl font-thai text-start font-bold uppercase tracking-tight leading-none md:text-2xl xl:text-xl">
               คุณสมบัติผู้เข้าแข่งขัน
             </h4>
           </div>
@@ -346,19 +487,27 @@ const Home = () => {
           {/* ด้านล่าง (รับสมัคร + วันที่) */}
           <div className="grid grid-cols-8 gap-4 lg:col-span-12 mt-8 mb-4">
             <div className="col-span-12 flex items-center gap-2 font-thai">
-              <i className="fas fa-star text-yellow-400"></i>
-              <span className="text-lg font-normal">สัญชาติไทย</span>
+              <li></li>
+              <span className="text-md md:text-lg font-normal">สัญชาติไทย</span>
             </div>
+
             <div className="col-span-12 flex items-center gap-2 font-thai">
-              <i className="fas fa-star text-yellow-400"></i>
-              <span className="text-lg font-normal">
-                อายุ 15 ปีบริบูรณ์ขึ้นไป
+              <li></li>
+              <span className="text-md md:text-lg font-normal">
+                นักศึกษาที่กำลังศึกษาในระดับอุดมศึกษา และพำนักอยู่ในประเทศไทย
               </span>
             </div>
             <div className="col-span-12 flex items-center gap-2 font-thai">
-              <i className="fas fa-star text-yellow-400"></i>
-              <span className="text-lg font-normal">
-                นักศึกษาที่กำลังศึกษาในระดับอุดมศึกษา และพำนักอยู่ในประเทศไทย
+              <li></li>
+              <span className="text-md md:text-lg font-normal">
+                ผู้เข้าแข่งขันทีมละ 5 คน
+              </span>
+            </div>
+            <div className="col-span-12 flex items-center gap-2 font-thai">
+              <li></li>
+              <span className="text-md md:text-lg font-normal">
+                ต้องไม่เป็นผู้ปฏิบัติหน้าที่ใดหน้าที่หนึ่งในการดำเนินการ
+                และ/หรือให้คำปรึกษาการจัดการแข่งขัน
               </span>
             </div>
           </div>
@@ -366,60 +515,77 @@ const Home = () => {
       </section>
 
       <section className="text-white">
-        <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0  lg:grid-cols-12">
+        <div className="grid max-w-screen-xl px-12 md:px-4 py-4  mx-auto lg:gap-4  lg:grid-cols-12">
           {/* ด้านบน (ข้อมูลการแข่งขัน / เกี่ยวกับการแข่งขัน) */}
           <div className="lg:col-span-12">
-            <h4 className="max-w-2xl text-2xl font-thai text-start font-bold uppercase tracking-tight leading-none md:text-2xl xl:text-xl">
+            <h4 className="max-w-2xl text-xl font-thai text-start font-bold uppercase tracking-tight leading-none md:text-2xl xl:text-xl">
               รางวัลทั้งหมด
             </h4>
           </div>
 
-          {/* ด้านล่าง (รับสมัคร + วันที่) */}
-          <div className="grid grid-cols-8 gap-4 lg:col-span-12 mt-8 mb-4">
-            <div className="col-span-4 flex items-center gap-2 font-thai">
+          <div className="grid grid-cols-1 md:grid-cols-8 gap-4 lg:col-span-12 pt-0  mb-4 md:mb-0">
+            <div className="md:col-span-4 flex flex-col md:flex-row items-start md:items-center gap-2 font-thai">
               <i className="fas fa-star text-yellow-400"></i>
-              <span className="text-lg font-normal">รางวัลชนะเลิศอันดับ 1</span>
+              <span className="text-md md:text-lg font-normal">
+                <FontAwesomeIcon
+                  icon={faTrophy}
+                  className="text-white p-1 pr-3"
+                />
+                รางวัลชนะเลิศอันดับ 1
+              </span>
             </div>
 
-            <div className="col-span-4 flex items-center justify-start font-thai">
-              <span className="text-lg font-normal">
+            <div className="md:col-span-4 flex flex-col md:flex-row items-start font-thai">
+              <span className="text-md md:text-lg font-normal">
                 100,000 บาท จำนวน 1 รางวัล พร้อมโล่เกียรติยศ
               </span>
             </div>
           </div>
 
           {/* ด้านล่าง (รับสมัคร + วันที่) */}
-          <div className="grid grid-cols-8 gap-4 lg:col-span-12 mt-8 mb-4">
-            <div className="col-span-4 flex items-center gap-2 font-thai">
+          <div className="grid grid-cols-1 md:grid-cols-8 gap-4 lg:col-span-12 pt-0  mb-4 md:mb-0">
+            <div className="md:col-span-4 flex flex-col md:flex-row items-start md:items-center gap-2 font-thai">
               <i className="fas fa-star text-yellow-400"></i>
-              <span className="text-lg font-normal">รางวัลชนะเลิศอันดับ 2</span>
+              <span className="text-md md:text-lg font-normal">
+                <FontAwesomeIcon
+                  icon={faTrophy}
+                  className="text-white p-1 pr-3"
+                />
+                รางวัลชนะเลิศอันดับ 2
+              </span>
             </div>
 
             <div className="col-span-4 flex items-center justify-start font-thai">
-              <span className="text-lg font-normal">
+              <span className="text-md md:text-lg font-normal">
                 50,000 บาท จำนวน 1 รางวัล พร้อมโล่เกียรติยศ
               </span>
             </div>
           </div>
 
           {/* ด้านล่าง (รับสมัคร + วันที่) */}
-          <div className="grid grid-cols-8 gap-4 lg:col-span-12 mt-8 mb-4">
-            <div className="col-span-4 flex items-center gap-2 font-thai">
+          <div className="grid grid-cols-1 md:grid-cols-8 gap-4 lg:col-span-12 pt-0  mb-4 md:mb-0">
+            <div className="md:col-span-4 flex flex-col md:flex-row items-start md:items-center gap-2 font-thai">
               <i className="fas fa-star text-yellow-400"></i>
-              <span className="text-lg font-normal">รางวัลชนะเลิศอันดับ 3</span>
+              <span className="text-md md:text-lg font-normal">
+                <FontAwesomeIcon
+                  icon={faTrophy}
+                  className="text-white p-1 pr-3"
+                />
+                รางวัลชนะเลิศอันดับ 3
+              </span>
             </div>
 
             <div className="col-span-4 flex items-center justify-start font-thai">
-              <span className="text-lg font-normal">
+              <span className="text-md md:text-lg font-normal">
                 30,000 บาท จำนวน 1 รางวัล พร้อมโล่เกียรติยศ
               </span>
             </div>
           </div>
 
-          <div className="grid grid-cols-8 gap-4 lg:col-span-12 mt-8 mb-4">
-            <div className="col-span-4 flex items-center gap-2 font-thai">
+          <div className="grid grid-cols-1 md:grid-cols-8 gap-4 lg:col-span-12 pt-0  mb-4 md:mb-0">
+            <div className="md:col-span-4 flex flex-col md:flex-row items-start md:items-center gap-2 font-thai">
               <i className="fas fa-star text-yellow-400"></i>
-              <span className="text-lg font-normal">
+              <span className="text-md md:text-lg font-normal">
                 ** พร้อมโล่ประกาศเกียรติคุณจากสำนักงานตำรวจแห่งชาติ
               </span>
             </div>
