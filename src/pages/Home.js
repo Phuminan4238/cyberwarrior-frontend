@@ -47,7 +47,7 @@ const Home = () => {
 
   return (
     <div
-      className="w-full min-h-screen bg-cover bg-initial bg-no-repeat bg-fixed"
+      className="w-full min-h-screen bg-cover bg-initial bg-no-repeat "
       style={{ backgroundImage: `url(${backgroundImg})` }}
     >
       <section className="text-white">
@@ -257,10 +257,10 @@ const Home = () => {
             <h4 className="max-w-2xl text-[1.6rem] mb-4 font-thai text-start font-bold uppercase tracking-tight leading-none md:text-3xl xl:text-3xl">
               ข้อมูลการแข่งขัน
             </h4>
-            <h4 className="max-w-2xl text-xl font-thai text-start font-bold uppercase tracking-tight leading-none md:text-2xl xl:text-xl">
+            <h4 className="max-w-2xl text-xl font-thai text-start font-bold uppercase tracking-tight leading-none md:text-2xl ">
               เป้าหมายของการแข่งขัน
             </h4>
-            <p className="font-thai text-md md:text-lg pt-4">
+            <p className="font-thai text-md md:text-xl pt-4">
               มุ่งค้นหาองค์ความรู้และนวัตกรรมที่สามารถนำมาสนับสนุนภารกิจในการป้องกันและปราบปรามอาชญากรรมทางเทคโนโลยี
               <br></br>
               พร้อมทั้งสร้างเครือข่ายนักศึกษาที่มีศักยภาพด้านเทคโนโลยี
@@ -276,7 +276,7 @@ const Home = () => {
         <div className="grid max-w-screen-xl px-12 md:px-4 py-4 md:py-8 mx-auto md:gap-8 xl:gap-0  md:grid-cols-12">
           {/* ด้านบน (ข้อมูลการแข่งขัน / เกี่ยวกับการแข่งขัน) */}
           <div className="lg:col-span-12">
-            <h4 className="max-w-2xl text-xl font-thai text-start font-bold uppercase tracking-tight leading-none md:text-2xl xl:text-xl">
+            <h4 className="max-w-2xl text-xl font-thai text-start font-bold uppercase tracking-tight leading-none md:text-2xl">
               กำหนดการ
             </h4>
           </div>
@@ -362,7 +362,6 @@ const Home = () => {
           {/* Repeat the same layout for the next section */}
           <div className="grid grid-cols-1 md:grid-cols-8 gap-4 lg:col-span-12 pt-0 md:mt-4 mb-4 md:mb-0">
             <div className="md:col-span-4 flex flex-col md:flex-row items-start md:items-center gap-2 font-thai">
-              <i className="fas fa-star text-yellow-400"></i>
               <span className="text-md md:text-lg font-normal">
                 <FontAwesomeIcon
                   icon={faStarRegular}
@@ -425,7 +424,7 @@ const Home = () => {
         <section className="text-white">
           <div className="grid max-w-screen-xl px-12 md:px-4 py-8 mx-auto lg:gap-8 xl:gap-0 ">
             <div className="lg:col-span-12">
-              <h4 className="max-w-2xl text-2xl font-thai text-start font-bold uppercase tracking-tight leading-none md:text-2xl xl:text-xl">
+              <h4 className="max-w-2xl text-2xl font-thai text-start font-bold uppercase tracking-tight leading-none md:text-2xl ">
                 ไทม์ไลน์การแข่งขัน
               </h4>
             </div>
@@ -479,7 +478,7 @@ const Home = () => {
         <div className="grid max-w-screen-xl px-12 md:px-4 py-4  mx-auto lg:gap-8 xl:gap-0 md:pt-[4rem] md:pb-[2rem] lg:grid-cols-12">
           {/* ด้านบน (ข้อมูลการแข่งขัน / เกี่ยวกับการแข่งขัน) */}
           <div className="lg:col-span-12">
-            <h4 className="max-w-2xl text-xl font-thai text-start font-bold uppercase tracking-tight leading-none md:text-2xl xl:text-xl">
+            <h4 className="max-w-2xl text-xl font-thai text-start font-bold uppercase tracking-tight leading-none md:text-2xl">
               คุณสมบัติผู้เข้าแข่งขัน
             </h4>
           </div>
@@ -518,7 +517,7 @@ const Home = () => {
         <div className="grid max-w-screen-xl px-12 md:px-4 py-4  mx-auto lg:gap-4  lg:grid-cols-12">
           {/* ด้านบน (ข้อมูลการแข่งขัน / เกี่ยวกับการแข่งขัน) */}
           <div className="lg:col-span-12">
-            <h4 className="max-w-2xl text-xl font-thai text-start font-bold uppercase tracking-tight leading-none md:text-2xl xl:text-xl">
+            <h4 className="max-w-2xl text-xl font-thai text-start font-bold uppercase tracking-tight leading-none md:text-2xl">
               รางวัลทั้งหมด
             </h4>
           </div>
@@ -593,7 +592,64 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="h-20 py-20"></section>
+      <section className="text-white pt-8 md:pt-12 px-12 md:px-4">
+        <div
+          className="relative bg-cover bg-initial bg-no-repeat bg-bottom rounded-xl border-l-2 border-r-2 border-white rounded-[26px] grid grid-cols-1 md:grid-cols-12 gap-6 max-w-screen-xl px-12 md:px-6 py-8 mx-auto md:gap-8"
+          style={{ backgroundImage: `url(${backgroundImg})` }}
+        >
+          <div className="absolute inset-0 bg-[rgba(10,29,58,0.1)]  z-0" />
+          {/* Left Column */}
+          <div className="lg:col-span-3 flex items-center justify-center">
+            <h4 className="max-w-2xl text-xl font-thai text-center font-bold uppercase tracking-tight leading-none md:text-2xl">
+              สมัครรับข่าวสารการแข่งขัน
+            </h4>
+          </div>
+
+          {/* Middle Column */}
+          <div className="lg:col-span-7 flex items-center justify-center">
+            <div className="w-full flex flex-col md:flex-row items-center gap-4">
+              <input
+                type="email"
+                placeholder="กรอก E-mail ของคุณ"
+                className="w-full md:w-full px-4 py-2 rounded-lg bg-transparent border border-gray-300 font-thai text-white placeholder:text-gray-300"
+              />
+            </div>
+          </div>
+
+          {/* Right Column */}
+          <div className="lg:col-span-2 flex items-center justify-center">
+            <button
+              style={{
+                backgroundImage: `url(${backgroundImg})`,
+              }}
+              className="w-[149px] h-[45.938px] flex justify-center items-center px-6 gap-2 rounded-lg font-thai font-bold bg-cover"
+            >
+              ติดตาม
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section className="text-white pt-8 md:pt-12 px-12 md:px-4">
+        <div className="grid max-w-screen-xl   py-2  mx-auto lg:gap-4 ">
+          <div className="relative rounded-xl border-l-2 border-r-2 border-white rounded-[26px] gap-6 max-w-fit px-12  md:px-6 py-4 ml-0 md:gap-8">
+            {/* Left Column */}
+            <div className="flex flex-col items-start justify-start gap-4">
+              <h4 className="max-w-2xl text-md font-thai text-start font-bold uppercase tracking-tight leading-none md:text-xl">
+                ติดต่อสอบถาม
+              </h4>
+              <h4 className="max-w-2xl text-md md:font-bold tracking-tight leading-none md:text-xl">
+                E-mail :
+                <span className="text-blue-400 pl-2">
+                  cyberwarrior2025@kmutt.ac.th
+                </span>
+              </h4>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="h-20 py-10"></section>
     </div>
   );
 };
