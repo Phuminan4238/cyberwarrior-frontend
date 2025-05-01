@@ -128,7 +128,7 @@ const Home: React.FC = () => {
                 </span>
               </li>
               <li>
-                <span className="block py-1 px-4 border-2 border-white rounded-2xl text-lg text-white hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-600">
+                <span className="block py-2 px-4 border-2 border-white rounded-2xl text-lg text-white hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-600">
                   สมัครเข้าร่วม
                 </span>
               </li>
@@ -786,5 +786,7 @@ const Home: React.FC = () => {
     </>
   );
 };
+
+// <!-- Updated for TSX stack -->
 
 export default Home;
